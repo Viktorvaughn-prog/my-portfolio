@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Void Von Arts Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Full Page GIF Background -->
+    <div class="background"></div>
+
+    <!-- Main Content Container -->
+    <div class="content">
+        <!-- Header -->
+        <header>
+            <h1>Void Von Arts</h1>
+            <p>Discover My Masterpieces</p>
+        </header>
+
+        <!-- Category Filters -->
+        <div class="filter-container">
+            <button class="filter-btn" onclick="filterPortfolio('colored')">Colored Art</button>
+            <button class="filter-btn" onclick="filterPortfolio('uncolored')">Uncolored Art</button>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="portfolio" id="portfolio">
+            <!-- Portfolio items will load here dynamically -->
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2024 Void Von Arts</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

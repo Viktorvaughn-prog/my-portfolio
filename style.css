@@ -1,0 +1,155 @@
+/* Resetting Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Full Page GIF Background */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/backgroundGIF/your-gif.gif') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    animation: swirlIn 3s ease-out;
+}
+
+/* Main Content */
+.content {
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards, swirlIn 3s ease-out forwards;
+}
+
+/* Header */
+header h1 {
+    font-size: 4em;
+    margin: 20px 0;
+    opacity: 0;
+    animation: fadeIn 2s ease-out 0.5s forwards;
+}
+
+header p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out 1s forwards;
+}
+
+/* Filter Buttons */
+.filter-container {
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1.5em;
+    padding: 10px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+/* Portfolio Grid */
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out 1.5s forwards;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    animation: rgbGlow 1s infinite alternate;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+/* RGB Hover Effect */
+@keyframes rgbGlow {
+    0% {
+        box-shadow: 0 0 10px red, 0 0 20px blue, 0 0 30px green;
+    }
+    50% {
+        box-shadow: 0 0 20px red, 0 0 30px blue, 0 0 40px green;
+    }
+    100% {
+        box-shadow: 0 0 30px red, 0 0 40px blue, 0 0 50px green;
+    }
+}
+
+/* Swirling Animation on Page Load */
+@keyframes swirlIn {
+    0% { transform: rotate(0deg); opacity: 0; }
+    100% { transform: rotate(360deg); opacity: 1; }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Footer */
+footer {
+    font-size: 1.2em;
+    margin-top: 50px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out 2s forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3em;
+    }
+
+    .portfolio {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-btn {
+        font-size: 1.2em;
+        padding: 8px 20px;
+    }
+}
